@@ -1,27 +1,18 @@
 #include "institution.h"
 #include <string.h>
 #include <wchar.h>
-institution::institution()
-{
-	name = '\0';
-	address = '\0';
-	staffCount = 0;
+#include <string>
+#pragma warning(disable : 4996)
+inline institution::institution(char* name, char* address, int staffCount) {
+    Name = new char[strlen(name) + 1];
+    Address = new char[strlen(address) + 1];
+    strcpy(Name, name);
+    strcpy(Address, address);
+    StaffCount = staffCount;
 }
-institution::institution(char* Name, char* Address, int StaffCount)
-{
-	strcpy(name, Name);
-	strcpy(address, Address);
-    staffCount = StaffCount;
-	}
-institution::charauto * GetName()
-{
-	return name;
-}
-institution::charauto* GetAddress();
-{
-	return address;
-}
-institution::int GetStaffCount();
-{
-	return staffCount;
-}
+//institution::institution()
+//{
+//	Name = '\0';
+//	Address = '\0';
+//	StaffCount = 0;
+//}

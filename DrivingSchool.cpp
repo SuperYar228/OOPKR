@@ -1,6 +1,10 @@
 #include "DrivingSchool.h"
 #include "institution.h"
-
-DrivingSchool mySchool("My Driving School", "123 Main St", 5, 8, 1000.0);
-
-std::cout << mySchool << std::endl;
+#include <iostream>
+#include <string>
+int main() 
+{
+    DrivingSchool ds((char)"AutoSchool", (char)"123 Main St", (int)10, (short)6, (double)1000.0);
+    std::cout << !ds;
+    return 0;
+}

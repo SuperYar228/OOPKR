@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,7 +130,6 @@
   <ItemGroup>
     <ClCompile Include="DrivingSchool.cpp" />
     <ClCompile Include="institution.cpp" />
-    <ClCompile Include="OOPKR.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrivingSchool.h" />

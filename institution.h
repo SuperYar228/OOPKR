@@ -1,16 +1,24 @@
 #pragma once
+#include <cstring>
 class institution
 {
 private:
-	char* name;
-	char* address;
-	int staffCount; //поле «Кількість співробітників»
+    char* Name;
+    char* Address;
+    int StaffCount;
 public:
-	institution(char* Name, char* Address, int StaffCount);
-	institution();
-	charauto* GetName();
-	charauto* GetAddress();
-	int GetStaffCount();
-	
-};
+    institution(char* name, char* address, int staffCount);
 
+   char* GetName() {
+        return Name;
+    }
+
+   char* GetAddress() {
+        return Address;
+    }
+
+    int GetStaffCount() {
+        return StaffCount;
+    }
+    institution();
+};

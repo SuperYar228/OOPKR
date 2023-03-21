@@ -1,26 +1,32 @@
 #pragma once
 #include "institution.h"
-#include <ostream>
-using namespace std;
-class DrivingSchool : public institution {
+#include <iostream>
+#include <cstring>
+#include <string>
+class DrivingSchool : public institution
+{
 private:
-    short studyTerm;
-    double studyCost;
+    short StudyTerm;
+    double StudyCost;
 public:
-    DrivingSchool(char* Name, char* Address, int StaffCount, short StudyTerm, double StudyCost)
-        : institution (Name, Address, StaffCount) {
-        studyTerm = StudyTerm;
-        studyCost = StudyCost;
-    }
+    DrivingSchool(char* name, char* address, int staffCount, short studyTerm, double studyCost)
+        : institution(name, address, staffCount), StudyTerm(studyTerm), StudyCost(studyCost) {}
+
     short GetStudyTerm() {
-        return studyTerm;
+        return StudyTerm;
     }
+
     double GetStudyCost() {
-        return studyCost;
+        return StudyCost;
     }
-    friend ostream& operator !(ostream& os, const DrivingSchool& school) {
-        os << "Driving School: " << school.name << ", " << school.address << ", "
-            << school.staffCount << ", " << school.studyTerm << " weeks, $"
-            << school.studyCost;
-        return os;
+
+    std::string operator!() {
+        std::string result = "";
+        result += "Name: " + std::string(GetName()) + "\n";
+        result += "Address: " + std::string(GetAddress()) + "\n";
+        result += "Staff Count: " + std::to_string(GetStaffCount()) + "\n";
+        result += "Study Term: " + std::to_string(GetStudyTerm()) + "\n";
+        result += "Study Cost: " + std::to_string(GetStudyCost()) + "\n";
+        return result;
+    }
 };
